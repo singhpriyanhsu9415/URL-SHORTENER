@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #98e4ff;
+            }
+            .form{
+                width: 300px;
+                margin: 3px;
+                padding: 3px;
+            }
+            .input-box{
+                display: flex;
+                justify-content: space-between;
+                margin: 5px;
+            }
+            #password{
+                margin-bottom: 10px;
+            }
+            button{
+                margin-left: 90px;
+                margin-top: 10px;
+                height: 40px;
+                width: 80px;
+                cursor: pointer;
+                font-size: large;
+                box-shadow: 1px 0px 10px;
+                background-color: #FFF5E0;
+            }
+            .main{
+                display: flex;
+                justify-content: center;
+                font-size: x-large;
+            }
+            .new{
+                display: flex;
+                justify-content: center;
+                
+            }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 80px;">SignUp</h1>
+    <div class="main">
+    <form action="/user" method="post">
+        <div class="form">
+        <div class="input-box">
+        <label >Full Name</label>
+        <input type="text" required name="name" placeholder="Enter Your Name"></div>
+        <div  class="input-box">
+        <label >Email</label>
+        <input type="text" required name="email"  placeholder="example@gmai.com"></div>
+        <div  class="input-box">
+        
+        <label >Password</label>
+        <input type="text" required name="password"  placeholder="**************"></div>
+        <button type="submit">Signup</button></div> </div>
+    </form>
+    <div class="new"><button style="width: 500px; background-color: #b3c8cf; font-size: x-large;" onclick="redirect()" >Go To Login</button></div>
+    <script>
+        var redirect=function(){
+    window.location.href="http://localhost:8001/login"
+   }
+    </script>
+    
+</body>
+</html>

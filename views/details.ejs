@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color:#E5D4FF;
+        }
+        h1{
+           text-align: center;
+        }
+        td{
+            padding: 10px 15px;
+            font-size: x-large;
+            font-weight: 300;
+        }
+        .table{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            
+        }
+       th,td{
+        border-style: groove;
+        font-size: larger;
+        padding: 15px;
+        
+       }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    <h1> Details Of The Visited URLs</h1>
+    <div class="table">
+        <% if (locals.urls) { %>
+         <table>
+            <thead>
+                <th>S.No</th>
+                <th>ShortId</th>
+                <th>Redirect</th>
+                <th>Clicks</th>
+            </thead>
+            <tbody>
+                <% urls.forEach((url, index) => { %>
+                 <tr>
+                    <td><%= index + 1 %></td>
+                    <td><a href="http://localhost:8001/url/<%= url.shortId %>" target="_blank"><%= url.shortId %></a></td>
+                    <td><%= url.redirectURL %></td>
+                    <td><%= url.visitHistory.length %></td>
+                 </tr>
+                <% }) %>
+               
+            </tbody>
+         </table>
+         <% } %>
+    </div>
+</body>
+</html>

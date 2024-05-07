@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color:#89B9AD;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            font-size: x-large;
+        }
+        .details{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            font-size: x-large;
+        }
+        button{
+            background-color:#FFFBDA;
+            box-shadow: 1px 1px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">URL SHORTENER</h1>
+    <div style="text-align: center; margin: 60px;">
+    <% if (locals.id){%>
+     <p style="font-size: larger;"> URL Generated: <a href="http://localhost:8001/url/<%=id %>" style="font-style: italic;" target="_blank"><%=id %></a></p>
+    <% } %></div>
+    <div class="form">
+        <form method="post" action="/url" >
+            <label >Enter Your Original URL</label>
+            <input type="text" name="url" placeholder="https://example.com" style="height: 30px; width: 300px;font-size: large;">
+            <button type="submit"style="height: 30px; width: 100px;font-size:large">Generate</button>
+        </form>
+    </div>
+ 
+    <div class="details"><button onclick="redirect()" style="font-size: x-large; margin: 40px; padding:5px 45px; border-radius: 5%; background-color: #102C57; color: white;" >History</button></div>
+   <script> var redirect=function(){
+    window.location.href="http://localhost:8001/"
+   }</script>
+</body>
+</html>
